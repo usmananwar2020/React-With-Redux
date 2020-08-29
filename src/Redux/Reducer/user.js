@@ -15,7 +15,7 @@ export const user = (state = initialState, action) => {
         case TYPES.USER_SUCCESS:
         return {
             isLoading:false,
-            user:action.user.data
+            user:action.user.data.hits
         }
         case TYPES.USER_FAILURE:
         return{
