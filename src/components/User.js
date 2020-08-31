@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { connect } from "react-redux";
 import { getUser } from '../Redux/Action/getUsers';
-import user from './User.css';
+import './User.css';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { width } from '@material-ui/system';
 import MediaCard from './MediaCard';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import MenuIcon from '@material-ui/icons/Menu';
 import Form from "./Form"
 
 const categories = [
@@ -31,11 +32,48 @@ const categories = [
         name:'Sparrow',
         value:'sparrow'
     },
+    {
+        name:'Parrot',
+        value:'parrot'
+    },
+    {
+        name:'Snake',
+        value:'snake'
+    },
+    {
+        name:'Home',
+        value:'home'
+    },
+    {
+        name:'Landscape',
+        value:'landscape'
+    },
+    {
+        name:'Bulding',
+        value:'bulding'
+    },
+    {
+        name:'Car',
+        value:'car'
+    },
+    {
+        name:'Bike',
+        value:'bike'
+    },
+    {
+        name:'Human',
+        value:'human'
+    },
+    {
+        name:'Kids',
+        value:'kids'
+    },
 ]
 
 function User(props) {
     const { users, isLoading } = props;
     const [search, setSearch] = useState('');
+    const [showSideBar, setShowSideBar] = useState(false);
     
 
     React.useEffect(() => {
@@ -49,12 +87,14 @@ function User(props) {
     } ;
 
     return (
-        <div>
-            <div className="sidenav">
+        <div className="user">
+            <MenuIcon className="menuIcon" onClick={() => setShowSideBar(!showSideBar)}/>
+            <div className={showSideBar ? 'sidenav afterClick' : 'sidenav'}>
                 {
                     categories.map(cato =><p onClick={()=>props.history.push(`/images/${cato.value}`)}>{cato.name}</p>)
                 }
             </div>
+
             <div className="container">
                 <Form onSubmit={getImages} value={search} setSearch={setSearch} />
                 {isLoading ? <CircularProgress color="secondary" /> :

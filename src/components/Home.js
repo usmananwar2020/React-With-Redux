@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from "react-redux";
 import { getUser } from '../Redux/Action/getUsers';
-import user from './User.css';
+import './User.css';
 import User from './User';
 import Form from './Form';
 
@@ -10,11 +10,16 @@ function Home(props) {
     // const { users, isLoading } = props;
     const getImages = (e) => {
         e.preventDefault();
-        console.log('props==',props)
+        console.log('props==', props)
         props.history.push(`/images/${search}`)
     }
     return (
-            <Form onSubmit ={getImages} value={search} setSearch={setSearch}/>
+        <div style={{marginTop:150}}>
+        <h1 className="h1-search">Stunning free images & royalty free stock</h1>
+        <p className="h1-search">Popular Images: -covid trip, wallpaper, -tpose, -vrouwekathedraal, abacate, abacaxi,<br/> abajur, abandoned hall, abandoned stair, 
+            abc alphabet, abgrenzung, abiertas, above view</p>
+            <Form onSubmit={getImages} value={search} setSearch={setSearch} />
+        </div>
     )
 }
 
