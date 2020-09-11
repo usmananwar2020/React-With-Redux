@@ -1,7 +1,11 @@
+.main-div{
+    display: flex;
+    justify-content: center;
+}
 .user{
     background-color: #077919;
     background-image: linear-gradient(311deg, #077919 11%, #6284FF 25%, #FF0000 36%, #ffe200 52%, #b722b6 92%, #ffffff 100%);
-    
+    height: 100%;
 }
 .divbtn{
     margin-left:5px;
@@ -16,9 +20,10 @@
     width: 150px;
 }
 .image{
-    padding-left: 5%;   
+    padding-left: 1%;   
     height: 90%;
-    width:90% ;
+    width:98% ;
+    border-radius: 15px;
     
 } 
 .search-form{
@@ -61,7 +66,7 @@
     width: 130px;
     position: fixed;
     z-index: 1;
-    top: -30px;
+    top: -20px;
     left: 10px;
     overflow-x: hidden;
     padding: 8px 0;
@@ -75,6 +80,7 @@
     color:rgb(75, 73, 73);
     display: block;
     margin-top: -10px;
+    cursor: pointer;
     
   }
   .side_btn {
@@ -83,10 +89,15 @@
     font-size: 20px;
     color:grey;
     display: block;
-    cursor: pointer;
     border: none;
     text-decoration: none;
     border-color: white;
+  }
+ 
+  .share{
+      margin-left: 40% !important;
+      color: blue;
+      cursor: pointer;
   }
   
   .menuIcon{display: none !important}
@@ -94,10 +105,20 @@
   @media(max-width:890px){
       .menuIcon{display: block !important}
       .sidenav {
-          left: -130px
+          left: -130px;
+          background:white;
+          height: auto;
+          width: auto;
       }
   }
 
   .afterClick{
       left:0
+  }
+  @media screen and (max-width:890px)
+  {
+    .button{
+        height: 50px;
+        width: auto;
+    }
   }

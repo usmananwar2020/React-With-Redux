@@ -12,7 +12,7 @@ import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
-
+import FbAuth from './FbAuth';
 
 const useStyles = makeStyles({
   root: {
@@ -25,33 +25,33 @@ const useStyles = makeStyles({
 
 function MediaCard(props) {
   const classes = useStyles();
-  const { name , image , like , comment , favorite , download } = props;
+  const { name, image, like, comment, favorite, download, share } = props;
 
   return (
-    <Card className={classes.root} style={{ display:"center" , 'margin-left' : '25%'}}>
-      <CardActionArea>
-        <CardMedia
-        className={classes.media}
-        />
-        <img className='image' src={image}></img>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-          <span className='spanName'> {name}</span>
-          </Typography>
-          {/* <Typography variant="body2" color="textSecondary" component="p">
-            
-          </Typography> */}
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        {/* <Button size="small" color="primary"> */}
-          <ThumbUpOutlinedIcon/>{like}<span> </span>
-        {/* </Button> */}
-        <ChatBubbleOutlineOutlinedIcon/>{comment}<span> </span>
-        <FavoriteBorderOutlinedIcon/>{favorite}<span> </span>
-        <GetAppOutlinedIcon/>{download}<span> </span>
-      </CardActions>
-    </Card>
+    <div className="main-div">
+      <Card className={classes.root} style={{ display: "center", 'margin-top': '1%' }}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+          />
+          <img className='image' src={image}></img>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              <span className='spanName'> {name}</span>
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          {/* <Button size="small" color="primary"> */}
+          <ThumbUpOutlinedIcon />{like}<span> </span>
+          {/* </Button> */}
+          <ChatBubbleOutlineOutlinedIcon />{comment}<span> </span>
+          <FavoriteBorderOutlinedIcon />{favorite}<span> </span>
+          <GetAppOutlinedIcon />{download}<span> </span>
+          <span className="share" ><FbAuth share={share} /></span><span> </span>
+        </CardActions>
+      </Card>
+    </div>
   );
 }
 export default MediaCard;

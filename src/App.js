@@ -5,6 +5,7 @@ import user from './components/User.css';
 import { Provider } from "react-redux"
 import User from './components/User';
 import Home from './components/Home';
+import FbAuth from './components/FbAuth';
 function App() {
 
   const user = {
@@ -21,11 +22,11 @@ console.log(JSON.parse(getUser));
         {/* <h1>Free Images and Free Stock</h1> */}
         <>
                 <Router>
-                  {/* <Switch> */}
+                  <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact path="/images/:name" component={User} />
-                  {/* <Route  component={()=><h1>Not Found</h1>} /> */}
-                    {/* </Switch> */}
+                  <Route  component={()=><h1>Not Found</h1>} />
+                    </Switch>
                 </Router>
             </>
       </Provider>

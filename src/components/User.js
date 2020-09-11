@@ -10,6 +10,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import MenuIcon from '@material-ui/icons/Menu';
 import Form from "./Form"
+import FbAuth from './FbAuth';
 
 const categories = [
     {
@@ -103,7 +104,6 @@ function User(props) {
                         {
                             users && users.length && users.map(user =>
 
-
                                 <MediaCard
                                     name={user.user}
                                     like={user.likes}
@@ -111,6 +111,7 @@ function User(props) {
                                     favorite={user.favorites}
                                     download={user.downloads}
                                     image={user.largeImageURL}
+                                    share={user.largeImageURL}
                                 />
 
                             )
