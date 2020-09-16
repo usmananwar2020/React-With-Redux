@@ -98,7 +98,7 @@ function User(props) {
 
             <div className="container">
                 <Form onSubmit={getImages} value={search} setSearch={setSearch} />
-                {isLoading ? <CircularProgress color="secondary" /> :
+                {isLoading ? <div style={{height : '100vh', display : 'flex' , alignItem : 'center' , justifyContent : 'center'}}><CircularProgress color="secondary" /></div> :
 
                     <div>
                         {

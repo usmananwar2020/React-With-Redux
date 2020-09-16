@@ -41,14 +41,14 @@ function MediaCard(props) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
+        <CardActions className="discription">
           {/* <Button size="small" color="primary"> */}
           <ThumbUpOutlinedIcon />{like}<span> </span>
           {/* </Button> */}
           <ChatBubbleOutlineOutlinedIcon />{comment}<span> </span>
           <FavoriteBorderOutlinedIcon />{favorite}<span> </span>
           <GetAppOutlinedIcon />{download}<span> </span>
-          <span className="share" ><FbAuth share={share} /></span><span> </span>
+          <span className="share" >Share<div className="shareIcon"><FbAuth share={share} /></div></span><span> </span>
         </CardActions>
       </Card>
     </div>

@@ -95,10 +95,16 @@
   }
  
   .share{
-      margin-left: 40% !important;
-      color: blue;
-      cursor: pointer;
+      margin-left: 35% !important;
+      cursor: context-menu;
+      display: flex;
   }
+  .shareIcon{
+    margin-left: 35% !important;
+    color: blue;
+    cursor: pointer;
+    margin-right: -50px;   
+}
   
   .menuIcon{display: none !important}
 
@@ -122,3 +128,22 @@
         width: auto;
     }
   }
+  @media screen and (max-width:600px)
+  {
+    .discription{
+        width: 400px;
+    }
+  }
+  @media screen and (max-width:500px)
+  {
+    .discription{
+        width: 300px;
+    }
+  }
+  @media screen and (max-width:460px)
+  {
+    .discription{
+        width: 0px;
+    }
+  }
+ 
